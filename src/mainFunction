@@ -1,0 +1,51 @@
+import entity.Country;
+import entity.Region;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class MainApp 
+{
+    public static void main(String[] args) 
+    
+    {
+
+        SessionFactory factory = new Configuration().configure("hibernate.cfg.xml")
+                .addAnnotatedClass(Region.class)
+                .addAnnotatedClass(Country.class)
+                .buildSessionFactory();
+
+        Session s = factory.openSession();
+
+        try
+        {
+            session.beginTransaction();
+
+            //  Region
+            Region r = new Region();
+            r.setRegion_name("Asia");
+            s.save(r);
+
+            // Country
+            Country c = new Country();
+            c.setCountry_id("IN");
+            c.setCountry_name("India");
+            c.setRegion(region);
+            s.save(country);
+
+            // Read Country
+            Country c = s.get(Country.class, "IN");
+            System.out.println("Country: " + c.getCountry_name() + ", Region: " + c.getRegion().getRegion_name());
+
+            // Update Country
+            c.setCountry_name("Bharat");
+            session.update(c);
+
+            session.getTransaction().commit();
+
+        } finally {
+            session.close();
+            factory.close();
+        }
+    }
+}
