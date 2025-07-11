@@ -1,0 +1,58 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.example</groupId>
+  <artifactId>HibernateCrud</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+  	<dependency>
+  		<groupId>com.project</groupId>
+  		<artifactId>CoreJavaProject</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
+</project>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.example</groupId>
+  <artifactId>HibernateCrud</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <dependencyManagement>
+  <dependencies>
+     <dependency>
+            <groupId>org.hibernate.orm</groupId>
+            <artifactId>hibernate-platform</artifactId>
+            <version>7.0.5.Final</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+        
+        <!-- https://mvnrepository.com/artifact/jakarta.platform/jakarta.jakartaee-bom -->
+<dependency>
+    <groupId>jakarta.platform</groupId>
+    <artifactId>jakarta.jakartaee-bom</artifactId>
+    <version>11.0.0</version>
+    <type>pom</type>
+</dependency>
+ 
+  </dependencies>
+  </dependencyManagement>
+  
+  <dependencies>
+      <dependency>
+        <groupId>org.hibernate.orm</groupId>
+        <artifactId>hibernate-core</artifactId>
+    </dependency>
+    
+    <dependency>
+        <groupId>jakarta.transaction</groupId>
+        <artifactId>jakarta.transaction-api</artifactId>
+    </dependency>
+     
+  </dependencies>
+</project>
+<dependency>
+        <groupId>org.hibernate.orm</groupId>
+        <artifactId>hibernate-core</artifactId>
+        <version>6.4.4.Final</version>
+    </dependency>
